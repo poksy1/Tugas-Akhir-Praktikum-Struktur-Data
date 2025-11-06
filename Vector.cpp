@@ -33,13 +33,11 @@ void pop_back(Vector& v) {
 int get(Vector& v, int index) {
     if (index >= 0 && index < v.length) {
         return v.data[index];
-    }
-}
+    }}
 void set(Vector& v, int index, int value) {
     if (index >= 0 && index < v.length) {
         v.data[index] = value;
-    }
-}
+    }}
 int size(Vector& v) {
     return v.length;
 }
@@ -49,8 +47,7 @@ void display(Vector& v) {
         cout << v.data[i];
         if (i < v.length - 1) cout << ", ";
     }
-    cout << "]\n";
-}
+    cout << "]\n";}
 void clear(Vector& v) {
     delete[] v.data;
     v.data = nullptr;

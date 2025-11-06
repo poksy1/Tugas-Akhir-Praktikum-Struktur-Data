@@ -44,10 +44,8 @@ int main() {
         case 2:
             cout << "Traversal mundur: ";
             traverseBackward(rear);
-            break;
-    }
-    return 0;
-}
+            break;    }
+    return 0;}
 node *create_new_node(int n) {
     ptr = new node;
     ptr->data = n;
@@ -61,22 +59,16 @@ void insert_node(node *np) {
     } else {
         rear->next = np;
         np->prev = rear; 
-        rear = np;
-    }
-}
+        rear = np;}}
 void traverseForward(node *head) {
     node* current = head;
     while (current != NULL) {
         cout << current->data << "";
-        current = current->next;
-    }
-    cout << endl;
-}
+        current = current->next;    }
+    cout << endl;}
 void traverseBackward(node *tail) {
     node* current = tail;
     while (current != NULL) {
         cout << current->data << " ";
-        current = current->prev;
-    }
-    cout << endl;
-}
+        current = current->prev;    }
+    cout << endl;}

@@ -3,35 +3,26 @@ using namespace std;
 
 int main() {
     int n;
-    cout << "Masukkan jumlah siswa: ";
-    cin >> n;    
-    int nilai[n];
-    string nama[n];
-
+    cout << "Masukkan jumlah angka: ";
+    cin >> n;
+    int angka[n];
     for (int i = 0; i < n; i++) {
-        cout << "Masukkan nama siswa ke-" << (i + 1) << ": ";
-        cin >> nama[i];
-        cout << "Masukkan nilai ujian " << nama[i] << ": ";
-        cin >> nilai[i];
+        cout << "Masukkan angka ke-" << (i + 1) << ": ";
+        cin >> angka[i];
     }
-
-    for (int i = 0; i < n - 1; i++) {
-        int pos = i;
-        for (int j = i + 1; j < n; j++) {
-            if (nilai[j] < nilai[pos]) { 
-                pos = j;
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (angka[j] > angka[j+1]) {
+                int temp = angka[j];
+                angka[j] = angka[j+1];
+                angka[j+1] = temp;
             }
         }
-        if (pos != i) {
-            tukar(&nilai[i], &nilai[pos]);    
-            tukar(&nama[i], &nama[pos]);      
-        }
     }
-
-    cout << "\nNilai ujian siswa setelah diurutkan: \n";
+    cout << "\nAngka yang sudah diurutkan: ";
     for (int i = 0; i < n; i++) {
-        cout << nama[i] << " : " << nilai[i] << endl;
+        cout << angka[i] << " ";
     }
-
+    cout << endl;
     return 0;
 }
